@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --plate-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    --very-plate-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/pattern-background-desktop.svg');
+    background-position: center center;
+    background-size: cover;
+}
+
+li,ul, ol { list-style: none; }
+button, input { outline: none; border: none }
+button {cursor: pointer;}
+p {font-size: 16px; color:var(--desaturated-blue);}
+
+@media (max-width: 375px) {
+    body {
+        font-size: 7pt;
+    }
+    a, h3 {
+        font-size: 1rem;
+    }
+    .card-container {
+        width: 90vw !important;
+    }
+    body {
+        background-image: url('../images/pattern-background-mobile.svg') !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-container {
+        width: 30vw !important;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-blue);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-container {
+    background: white;
+    border-radius: 15px;
+    width: 50vw;
+    -webkit-box-shadow: 0 .25em .75em rgba(0,0,0,.1);
+    box-shadow: 0 .25em .75em rgba(0,0,0,.1);
+}
+
+.card-container .header img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-container .body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.container .body > p {
+    width: 80%;
+    margin: auto;
+    padding: 1em 0;
+}
+
+.card-container .body .plan {
+    background: var(--very-plate-blue);
+    border-radius: 6px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5em 0;
+}
+
+.card-container .body .plan .icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-container .body .plan .price {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.card-container .body .plan a {
+    font-weight: bolder;
+    color: var(--bright-blue);
+}
+
+.card-container .body .plan a:hover {
+    color: var(--desaturated-blue);
+    text-decoration: none;
+}
+
+.card-container .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.card-container .buttons button {
+    width: 80%;
+    margin: auto;
+    padding: 1em 0;
+    font-weight: bold;
+}
+
+.card-container .buttons .proceed {
+    background: var(--bright-blue);
+    color: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 .5em .75em var(--desaturated-blue);
+    box-shadow: 0 .5em .75em var(--desaturated-blue);
+    transition: opacity .15s linear;
+}
+
+.card-container .buttons .proceed:hover {
+    opacity: .75;
+}
+
+.card-container .buttons .cancel {
+    margin-top: 10px;
+    color: var(--bright-blue);
+    background: transparent;
+    font-weight: bold;
+}
+
+.card-container .buttons .cancel:hover {
+    color: var(--dark-blue);
+}
